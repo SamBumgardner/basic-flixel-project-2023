@@ -5,6 +5,12 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
+	var newHeroPositionX = 50;
+	var newHeroPositionY = 3;
+
+	var positionChangeX = 20;
+	var positionChangeY = 1;
+
 	override public function create()
 	{
 		super.create();
@@ -15,6 +21,10 @@ class PlayState extends FlxState
 
 	override public function update(elapsed:Float)
 	{
+		new Hero(newHeroPositionX, newHeroPositionY);
+		newHeroPositionX += positionChangeX;
+		newHeroPositionY += positionChangeY;
+
 		super.update(elapsed);
 	}
 }
